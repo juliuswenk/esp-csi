@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/x509_crt_bundle.S
+

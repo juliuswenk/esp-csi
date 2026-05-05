@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/CMakeFiles/bootloader
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/CMakeFiles/bootloader.rule
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/CMakeFiles/bootloader-complete.rule
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

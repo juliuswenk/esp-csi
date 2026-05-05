@@ -25,8 +25,18 @@
 #include "esp_netif.h"
 #include "esp_now.h"
 #include "esp_csi_gain_ctrl.h"
+#include "driver/gpio.h"
 
 #define CONFIG_LESS_INTERFERENCE_CHANNEL   11
+#define RECEIVER_RGB_LED_RED_GPIO          GPIO_NUM_46
+#define RECEIVER_SAFE_STATUS_LED_GPIO      GPIO_NUM_48
+#define RECEIVER_LED_COLOR_OFF             0
+#define RECEIVER_LED_COLOR_RED             1
+#define RECEIVER_LED_COLOR_BLUE            2
+
+#ifndef RECEIVER_LED_COLOR
+#define RECEIVER_LED_COLOR                 RECEIVER_LED_COLOR_OFF
+#endif
 #if CONFIG_IDF_TARGET_ESP32C5 || CONFIG_IDF_TARGET_ESP32C61 || (CONFIG_IDF_TARGET_ESP32C6 && ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 4, 0))
 #define CONFIG_WIFI_BAND_MODE               WIFI_BAND_MODE_2G_ONLY
 #define CONFIG_WIFI_2G_BANDWIDTHS           WIFI_BW_HT40
@@ -55,6 +65,35 @@
 
 static const uint8_t CONFIG_CSI_SEND_MAC[] = {0x1a, 0x00, 0x00, 0x00, 0x00, 0x00};
 static const char *TAG = "csi_recv";
+
+static void receiver_status_led_init(void)
+{
+#if RECEIVER_LED_COLOR == RECEIVER_LED_COLOR_RED
+    gpio_config_t red_conf = {
+        .pin_bit_mask = 1ULL << RECEIVER_RGB_LED_RED_GPIO,
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE,
+    };
+    ESP_ERROR_CHECK(gpio_config(&red_conf));
+    gpio_set_level(RECEIVER_RGB_LED_RED_GPIO, 0);
+    ESP_LOGI(TAG, "receiver zone LED: red / left");
+#elif RECEIVER_LED_COLOR == RECEIVER_LED_COLOR_BLUE
+    gpio_config_t blue_conf = {
+        .pin_bit_mask = 1ULL << RECEIVER_SAFE_STATUS_LED_GPIO,
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE,
+    };
+    ESP_ERROR_CHECK(gpio_config(&blue_conf));
+    gpio_set_level(RECEIVER_SAFE_STATUS_LED_GPIO, 1);
+    ESP_LOGI(TAG, "receiver zone LED: safe status / right");
+#else
+    ESP_LOGI(TAG, "receiver zone LED: off / center");
+#endif
+}
 
 static void wifi_init()
 {
@@ -294,4 +333,5 @@ void app_main()
     wifi_esp_now_init(peer);
 
     wifi_csi_init();
+    receiver_status_led_init();
 }

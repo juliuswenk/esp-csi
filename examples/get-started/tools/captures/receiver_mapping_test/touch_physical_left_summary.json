@@ -1,0 +1,17 @@
+{
+  "right": {
+    "ok": true,
+    "lines": 479,
+    "valid": 239
+  },
+  "left": {
+    "ok": true,
+    "lines": 483,
+    "valid": 241
+  },
+  "center": {
+    "ok": true,
+    "lines": 481,
+    "valid": 240
+  }
+}

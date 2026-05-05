@@ -23,8 +23,12 @@
 #include "esp_wifi.h"
 #include "esp_netif.h"
 #include "esp_now.h"
+#include "driver/gpio.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 #define CONFIG_LESS_INTERFERENCE_CHANNEL   11
+#define SENDER_STATUS_LED_GPIO             GPIO_NUM_48
 
 #if CONFIG_IDF_TARGET_ESP32C5 || CONFIG_IDF_TARGET_ESP32C61 || (CONFIG_IDF_TARGET_ESP32C6 && ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 4, 0))
 #define CONFIG_WIFI_BAND_MODE   WIFI_BAND_MODE_2G_ONLY
@@ -46,6 +50,25 @@
 
 static const uint8_t CONFIG_CSI_SEND_MAC[] = {0x1a, 0x00, 0x00, 0x00, 0x00, 0x00};
 static const char *TAG = "csi_send";
+
+static void sender_status_led_task(void *arg)
+{
+    gpio_config_t io_conf = {
+        .pin_bit_mask = 1ULL << SENDER_STATUS_LED_GPIO,
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE,
+    };
+    ESP_ERROR_CHECK(gpio_config(&io_conf));
+
+    for (;;) {
+        gpio_set_level(SENDER_STATUS_LED_GPIO, 1);
+        vTaskDelay(pdMS_TO_TICKS(250));
+        gpio_set_level(SENDER_STATUS_LED_GPIO, 0);
+        vTaskDelay(pdMS_TO_TICKS(750));
+    }
+}
 
 static void wifi_init()
 {
@@ -158,6 +181,7 @@ void app_main()
     ESP_LOGI(TAG, "================ CSI SEND ================");
     ESP_LOGI(TAG, "wifi_channel: %d, send_frequency: %d, mac: " MACSTR,
              CONFIG_LESS_INTERFERENCE_CHANNEL, CONFIG_SEND_FREQUENCY, MAC2STR(CONFIG_CSI_SEND_MAC));
+    xTaskCreate(sender_status_led_task, "sender_status_led", 2048, NULL, 1, NULL);
 
     for (uint32_t count = 0; ; ++count) {
         esp_err_t ret = esp_now_send(peer.peer_addr, (const uint8_t *)&count, sizeof(count));

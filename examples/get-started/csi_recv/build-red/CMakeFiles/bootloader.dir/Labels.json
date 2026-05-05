@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/Users/juliuswenk/Desktop/KD/KZP-inivisible-waves/esp-csi/examples/get-started/csi_recv/build-red/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}
