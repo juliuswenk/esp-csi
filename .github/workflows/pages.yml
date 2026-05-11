@@ -33,7 +33,9 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Configure Pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Prepare static site
         run: |
@@ -46,7 +48,7 @@ jobs:
           find "Dokumentation/Work in Progress/building the installation" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec cp {} "_site/Dokumentation/Work in Progress/building the installation/" \;
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
@@ -59,4 +61,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4
