@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Veiled Panopticon</title>
+        <meta
+            name="description"
+            content="Veiled Panopticon turns WiFi signals that already pass through everyday spaces into a camera-free way of sensing human presence."
+        />
+        <meta property="og:title" content="Veiled Panopticon" />
+        <meta
+            property="og:description"
+            content="A camera-free through-wall installation prototype using WiFi CSI."
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header class="site-header" aria-label="Site header">
+            <a class="wordmark" href="#top">Veiled Panopticon</a>
+            <nav aria-label="Page sections">
+                <a href="#project">Project</a>
+                <a href="#documentation">Documentation</a>
+                <a href="#references">References</a>
+            </nav>
+        </header>
+
+        <main id="top">
+            <section class="hero" aria-labelledby="hero-title">
+                <div
+                    class="hero-video"
+                    id="hero-video"
+                    aria-label="Project video"
+                ></div>
+                <div class="hero-intro">
+                    <div>
+                        <p class="kicker">
+                            Camera-free through-surface installation prototype
+                        </p>
+                        <h1 id="hero-title">Veiled Panopticon</h1>
+                    </div>
+                    <div class="hero-copy">
+                        <p class="teaser">
+                            What happens when walls no longer separate seen from
+                            unseen?
+                        </p>
+                        <p class="teaser">
+                            Veiled Panopticon turns WiFi signals that already
+                            pass through everyday spaces into a camera-free way
+                            of sensing human presence. Making the threat of
+                            surveillance a palpable through showing that the
+                            infrastructure needed already surrounds us.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="section two-column"
+                id="project"
+                aria-labelledby="project-title"
+            >
+                <div>
+                    <p class="section-label">Project</p>
+                    <h2 id="project-title"></h2>
+                </div>
+                <div class="body-copy">
+                    <p>
+                        Veiled Panopticon uses one ESP32-S3 sender and three
+                        ESP32-S3 receivers to read subtle changes in wireless
+                        signal behaviour as a person moves behind a wall. The
+                        system translates variations in signal strength and
+                        channel-state data into a soft, probabilistic sense of
+                        presence.
+                    </p>
+                    <p>
+                        The project explores a form of machine perception that
+                        has no need for visible surveillance. It suggests a near
+                        future in which sensing is embedded in the
+                        infrastructure already around us: routers, devices, and
+                        electromagnetic fields become quiet instruments of
+                        spatial awareness. In doing so,&nbsp;Veiled
+                        Panopticon&nbsp;asks what happens when walls no longer
+                        fully separate seen from unseen, and when ordinary
+                        environments become readable through signals we usually
+                        ignore.
+                    </p>
+                    <p>
+                        Its implications are both practical and uneasy.
+                        Camera-free sensing could enable new forms of
+                        accessibility, automation, safety, and spatial
+                        interaction, especially where visual monitoring is
+                        intrusive or impossible. At the same time, it raises
+                        questions about privacy, consent, and public space. If
+                        presence can be detected without an image, and even
+                        through barriers, then the boundary between observation
+                        and invisibility becomes harder to locate.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section facts" aria-label="Project facts">
+                <div>
+                    <p class="section-label">Contributors</p>
+                    <p>Visuals: Lennard Lev</p>
+                    <p>Installation Design: Lena Eibel</p>
+                    <p>Hardware: Julius Wenk</p>
+                </div>
+                <div>
+                    <p class="section-label">Context</p>
+                    <p>
+                        This project was conceptualized &amp; completed in 5
+                        days as part of the short-term-projects that are port of
+                        the Bachelors of Communcation Design at the HTW Berlin.
+                    </p>
+                </div>
+                <div>
+                    <p class="section-label">Hardware</p>
+                    <p>1x sender</p>
+                    <p>3x receivers</p>
+                    <p>Arduino Nano ESP32 (ESP32-S3)</p>
+                </div>
+            </section>
+
+            <section
+                class="section"
+                id="documentation"
+                aria-labelledby="documentation-title"
+            >
+                <div class="section-heading">
+                    <p class="section-label">Documentation</p>
+                    <h2 id="documentation-title"></h2>
+                </div>
+                <div id="media-sections"></div>
+            </section>
+
+            <section
+                class="section two-column references"
+                id="references"
+                aria-labelledby="references-title"
+            >
+                <div>
+                    <p class="section-label">References</p>
+                    <h2 id="references-title"></h2>
+                </div>
+                <div class="body-copy">
+                    <p>
+                        Firmware is based on Espressif's <code>esp-csi</code>
+                        <code>csi_send</code> / <code>csi_recv</code> examples.
+                    </p>
+                    <p>
+                        The live visual output is rendered as a p5.js sketch
+                        connected to the CSI backend over SSE.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Veiled Panopticon</p>
+            <p>HTW Berlin</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
