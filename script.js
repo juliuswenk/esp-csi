@@ -3,8 +3,8 @@ const mediaSections = [
     title: "Dokumentation / finished installation",
     items: [
       {
-        file: "installation-outside-view-with-visible-hardware-setup.JPG",
-        path: "Dokumentation/finished installation/installation-outside-view-with-visible-hardware-setup.JPG",
+        file: "finished-installation.JPG",
+        path: "Dokumentation/finished installation/finished-installation.JPG",
         date: "2026-05-08",
       },
       {
@@ -13,18 +13,18 @@ const mediaSections = [
         date: "2026-05-08",
       },
       {
-        file: "finished-installation.JPG",
-        path: "Dokumentation/finished installation/finished-installation.JPG",
-        date: "2026-05-08",
-      },
-      {
-        file: "final-backend-ui.png",
-        path: "Dokumentation/finished installation/final-backend-ui.png",
+        file: "installation-outside-view-with-visible-hardware-setup.JPG",
+        path: "Dokumentation/finished installation/installation-outside-view-with-visible-hardware-setup.JPG",
         date: "2026-05-08",
       },
       {
         file: "panoramic-space-overview-fov-of-receivers.JPG",
         path: "Dokumentation/finished installation/panoramic-space-overview-fov-of-receivers.JPG",
+        date: "2026-05-08",
+      },
+      {
+        file: "final-backend-ui.png",
+        path: "Dokumentation/finished installation/final-backend-ui.png",
         date: "2026-05-08",
       },
     ],
